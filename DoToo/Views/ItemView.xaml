@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoToo.Views.ItemView"
+             Title="Saisir une Todo">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Enregistrer" Command="{Binding Save}" />
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Padding="14">
+        
+        <Label Text="Titre"/>
+        <Entry Text="{Binding Item.Title}"/>
+        <Label Text="Jusqu'au"/>
+        <DatePicker Date="{Binding Item.Due}" />
+        
+        <StackLayout Orientation="Horizontal">
+            <Switch IsToggled="{Binding Item.Completed}" />
+            <Label Text="Terminer"/>
+        </StackLayout>
+
+    </StackLayout>
+    
+</ContentPage>
